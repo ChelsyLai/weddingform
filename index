@@ -128,21 +128,23 @@
     </nav>
 
     <!-- Hero Fullscreen Cover Background -->
-    <header class="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden">
-        <!-- Background Image with Soft Warm Overlay -->
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 transform scale-105 transition-transform duration-10000"
-             style="background-image: url('https://i.postimg.cc/9F6x8GYZ/20260619-00191-kao-bei.jpg');">
+    <header class="relative min-h-[115vh] md:min-h-[140vh] flex items-center justify-center text-center px-4 overflow-hidden">
+        <!-- Background Image with Soft Warm Overlay & Responsive Positioning -->
+        <div class="absolute inset-0 bg-cover bg-no-repeat z-0 transform scale-105 transition-transform duration-10000 bg-[position:30%_center] md:bg-[position:45%_center]"
+             style="background-image: url('https://i.postimg.cc/63gv7WPg/20260619-00191xie-ka-A-400P.jpg');">
             <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/60"></div>
         </div>
 
-        <div class="relative z-10 text-white max-w-3xl mx-auto px-4 pt-16 flex flex-col items-center">
+        <div class="relative z-10 text-white max-w-3xl mx-auto px-4 pt-28 md:pt-52 pb-16 flex flex-col items-center">
             <p class="font-garamond italic text-lg md:text-2xl tracking-widest text-morandi-warm mb-3 uppercase">Wedding Invitation</p>
-            
-            <h1 class="font-garamond text-4xl sm:text-6xl md:text-7xl font-light tracking-wide mb-3 text-center flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-4">
-                <span class="whitespace-nowrap">Alex Tseng</span>
-                <span class="text-morandi-warm font-serif italic text-3xl sm:text-5xl md:text-6xl my-1 sm:my-0">&amp;</span>
-                <span class="whitespace-nowrap">Chelsy Lai</span>
+
+            <!-- Main Dynamic Responsive Title -->
+            <h1 class="font-garamond text-4xl md:text-7xl font-light tracking-wide mb-3 text-center flex flex-col md:flex-row items-center justify-center gap-1 md:gap-4">
+                <span class="whitespace-nowrap font-normal">Alex Tseng</span>
+                <span class="text-morandi-warm font-serif italic text-3xl md:text-6xl my-1 md:my-0">&amp;</span>
+                <span class="whitespace-nowrap font-normal">Chelsy Lai</span>
             </h1>
+
             <p class="text-lg md:text-2xl font-serif tracking-widest text-white/95 mb-4">
                 得剛 <span class="text-morandi-warm">&amp;</span> 郁婷
             </p>
@@ -173,8 +175,9 @@
         <h2 class="text-2xl md:text-3xl font-semibold tracking-wider mb-6 text-morandi-charcoal">關於我們</h2>
         
         <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-12 text-sm md:text-base font-light">
-            我們渴望探索下一個世界，珍惜每一次的遇見。<br>從相識、相知到相惜，攜手走過的每一步，都讓未來的旅程逐漸有了光。<br class="hidden sm:inline">
-            而您，也是我們生命中珍貴的遇見。誠摯邀請您，一同分享這份幸福與喜悅。
+            我們渴望探索下一個世界，珍惜每一次的遇見。<br>從相識、相知到相惜，攜手走過的每一步，都讓未來的旅程逐漸有了光。<br>
+            而您，也是我們生命中可貴的遇見。<br>
+            誠摯邀請您，一同分享這份幸福與喜悅。
         </p>
 
         <!-- Countdown Timer -->
@@ -232,12 +235,12 @@
                                 <i class="fa-solid fa-church"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold tracking-wide">婚禮儀式</h3>
+                                <h3 class="text-lg font-semibold tracking-wide">證婚儀式</h3>
                                 <p class="text-xs text-gray-400 uppercase font-garamond tracking-wider">WEDDING CEREMONY</p>
                             </div>
                         </div>
                         <span class="px-3 py-1 bg-amber-50 text-morandi-warm border border-amber-200/50 rounded-full text-xs font-medium self-start sm:self-auto">
-                            上午時段
+                            場地空間有限
                         </span>
                     </div>
 
@@ -274,7 +277,7 @@
                             </div>
                         </div>
                         <span class="px-3 py-1 bg-emerald-50 text-morandi-sage border border-emerald-200/50 rounded-full text-xs font-medium self-start sm:self-auto">
-                            午間時段
+                            敬請準時入席
                         </span>
                     </div>
 
@@ -310,6 +313,7 @@
         </div>
 
         <div class="max-w-2xl mx-auto space-y-4">
+            <!-- 1. 自行開車 Accordion -->
             <div class="border border-stone-200 bg-white rounded-2xl overflow-hidden shadow-sm">
                 <button class="accordion-header w-full px-6 py-4 text-left font-medium text-gray-800 flex justify-between items-center focus:outline-none hover:bg-morandi-sand/30 transition-colors" onclick="toggleAccordion('acc-driving', 'icon-driving')">
                     <span class="flex items-center text-sm md:text-base">
@@ -319,57 +323,62 @@
                     <i id="icon-driving" class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-300"></i>
                 </button>
                 <div id="acc-driving" class="accordion-content border-t border-gray-100 bg-stone-50/50">
-                    <div class="p-6 text-sm text-gray-600 leading-relaxed">
-                        <p class="flex items-center">
-                            <i class="fa-solid fa-square-parking text-morandi-warm mr-2"></i>
-                            賓客皆可享有飯店免費停車。
+                    <div class="p-6 text-sm text-gray-600 leading-relaxed space-y-2">
+                        <p class="flex items-start sm:items-center">
+                            <i class="fa-solid fa-square-parking text-morandi-warm mr-2 mt-0.5 sm:mt-0"></i>
+                            <span>賓客皆可享有飯店免費停車。（車位有限，請儘早入場）</span>
                         </p>
+                        <div class="text-xs text-amber-700/80 font-medium pl-6 space-y-1">
+                            <p>※溫馨提示：理性飲酒，喝酒請勿開車。</p>
+                            <p>※假日出遊車潮多，易塞車，敬請賓客提早出發。</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- 2. 大眾運輸 Accordion -->
             <div class="border border-stone-200 bg-white rounded-2xl overflow-hidden shadow-sm">
                 <button class="accordion-header w-full px-6 py-4 text-left font-medium text-gray-800 flex justify-between items-center focus:outline-none hover:bg-morandi-sand/30 transition-colors" onclick="toggleAccordion('acc-transit', 'icon-transit')">
                     <span class="flex items-center text-sm md:text-base">
                         <i class="fa-solid fa-bus text-morandi-sage mr-3"></i>
-                        大眾運輸指引
+                        大眾運輸
                     </span>
                     <i id="icon-transit" class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-300"></i>
                 </button>
                 <div id="acc-transit" class="accordion-content border-t border-gray-100 bg-stone-50/50">
-                    <div class="p-6 space-y-4 text-sm text-gray-600 leading-relaxed">
-                        <div class="border-b border-gray-200/60 pb-3 last:border-b-0 last:pb-0">
-                            <span class="font-medium text-gray-800 block mb-1">
-                                <span class="whitespace-nowrap">國光1815路線</span>（台北車站-金青中心/法鼓山）
-                            </span>
-                            <p class="text-xs md:text-sm text-gray-500">
-                                於「金山區公所」站牌下車後步行約 15 分鐘。
+                    <div class="p-6 text-sm text-gray-600 leading-relaxed space-y-5">
+                        
+                        <!-- 站點群組 1：金山區公所 -->
+                        <div class="space-y-2">
+                            <div class="font-medium text-gray-800 flex items-center">
+                                <i class="fa-solid fa-bus-simple text-morandi-warm mr-2"></i>
+                                國光 1815 / 淡水客運 862、863
+                            </div>
+                            <ul class="text-xs text-gray-600 pl-6 list-disc space-y-1">
+                                <li>國光 1815 路線（台北車站 - 金青中心/法鼓山）</li>
+                                <li>淡水客運 862 路線（淡水 - 基隆）</li>
+                                <li>淡水客運 863 路線（淡水 - 金山）</li>
+                            </ul>
+                            <p class="text-xs text-morandi-sage font-medium pl-6">
+                                <i class="fa-solid fa-person-walking mr-1"></i>於「金山區公所」站牌下車後步行約 15 分鐘。
                             </p>
                         </div>
-                        <div class="border-b border-gray-200/60 pb-3 last:border-b-0 last:pb-0">
-                            <span class="font-medium text-gray-800 block mb-1">
-                                <span class="whitespace-nowrap">淡水客運862路線</span>（淡水-基隆）、<span class="whitespace-nowrap">863路線</span>（淡水-金山）
-                            </span>
-                            <p class="text-xs md:text-sm text-gray-500">
-                                於「金山區公所」站牌下車後步行約 15 分鐘。
+
+                        <!-- 站點群組 2：中正路或金山醫院 -->
+                        <div class="border-t border-stone-200/60 pt-4 space-y-2">
+                            <div class="font-medium text-gray-800 flex items-center">
+                                <i class="fa-solid fa-bus-simple text-morandi-warm mr-2"></i>
+                                基隆客運 790、953
+                            </div>
+                            <ul class="text-xs text-gray-600 pl-6 list-disc space-y-1">
+                                <li>基隆客運 790 路線（基隆 - 金山）</li>
+                                <li>基隆客運 953 路線（臺大計資中心 - 金山醫院）</li>
+                            </ul>
+                            <p class="text-xs text-morandi-sage font-medium pl-6">
+                                <i class="fa-solid fa-person-walking mr-1"></i>於「中正路」或「金山醫院」站牌兩者皆可下車，下車後步行約 6 分鐘。
                             </p>
                         </div>
-                        <div class="border-b border-gray-200/60 pb-3 last:border-b-0 last:pb-0">
-                            <span class="font-medium text-gray-800 block mb-1">
-                                <span class="whitespace-nowrap">基隆客運790路線</span>（基隆-金山）
-                            </span>
-                            <p class="text-xs md:text-sm text-gray-500">
-                                於「中正路」或「金山醫院」站牌兩者皆可下車，下車後步行約 6 分鐘。
-                            </p>
-                        </div>
-                        <div class="pb-1">
-                            <span class="font-medium text-gray-800 block mb-1">
-                                <span class="whitespace-nowrap">基隆客運953路線</span>（金山－北科大/板橋）
-                            </span>
-                            <p class="text-xs md:text-sm text-gray-500">
-                                於「金山醫院」站牌下車，下車後步行約 6 分鐘。
-                            </p>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -458,14 +467,14 @@
                                min="0" 
                                max="10" 
                                value="1"
-                               oninput="validateDietaryCount()"
+                               oninput="validateDietaryCount(); validateShuttleCount();"
                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-morandi-sage/40 focus:border-morandi-sage text-sm transition-all">
                     </div>
 
                     <!-- 6. 證婚人數 CEREMONY ATTENDEES (entry.405115918) -->
                     <div>
                         <label for="entry_405115918" class="block text-xs md:text-sm font-medium text-gray-700 tracking-wider mb-2">
-                            參加證婚儀式人數(預計09:30開始) <span class="font-garamond font-normal text-gray-400">CEREMONY ATTENDEES</span>
+                            參加證婚儀式人數(預計10:00開始，場地空間有限) <span class="font-garamond font-normal text-gray-400">CEREMONY ATTENDEES</span>
                         </label>
                         <input type="number" 
                                name="entry.405115918" 
@@ -509,7 +518,38 @@
                         <div id="dietaryValidationMsg" class="mt-2 text-xs font-medium px-2 py-1 rounded-md transition-all"></div>
                     </div>
 
-                    <!-- 8. 兒童座椅 CHILD SEATS (entry.850592703) -->
+                    <!-- 8. 接駁車搭乘意願 SHUTTLE BUS (entry.499630872) -->
+                    <div>
+                        <label for="entry_499630872" class="block text-xs md:text-sm font-medium text-gray-700 tracking-wider mb-2">
+                            接駁車搭乘意願 / 人數 <span class="font-garamond font-normal text-gray-400">SHUTTLE BUS</span>
+                        </label>
+                        
+                        <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/70 text-xs text-amber-800 leading-relaxed mb-3 space-y-1">
+                            <p class="font-medium flex items-center">
+                                <i class="fa-solid fa-bus text-amber-600 mr-1.5"></i> 接駁車規劃說明：
+                            </p>
+                            <p class="text-amber-700/90 font-light">
+                                ※ 目前正在規劃中，地點為大台北市區，正確地點及發車時間待定。因車輛座位有限，目前僅作為意願調查（不保證一定有位），須請先考慮無接駁車的交通備案，我們將於婚禮前主動聯繫通知。
+                            </p>
+                        </div>
+
+                        <div>
+                            <label for="entry_663434225" class="block text-xs text-gray-600 mb-1">搭乘接駁車人數 (預設 0 表示不需要)</label>
+                            <input type="number" 
+                                   name="entry.663434225" 
+                                   id="entry_663434225" 
+                                   min="0" 
+                                   max="10" 
+                                   value="0"
+                                   oninput="validateShuttleCount()"
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-morandi-sage/40 focus:border-morandi-sage text-sm transition-all bg-white">
+                        </div>
+
+                        <!-- 接駁車人數動態驗證提示 -->
+                        <div id="shuttleValidationMsg" class="mt-2 text-xs font-medium px-2 py-1 rounded-md transition-all"></div>
+                    </div>
+
+                    <!-- 9. 兒童座椅 CHILD SEATS (entry.850592703) -->
                     <div>
                         <label for="entry_850592703" class="block text-xs md:text-sm font-medium text-gray-700 tracking-wider mb-2">
                             兒童座椅需求 <span class="font-garamond font-normal text-gray-400">CHILD SEATS NEEDED</span>
@@ -524,7 +564,7 @@
 
                 </div>
 
-                <!-- 9. 喜帖索取需求 INVITATION PREFERENCE (entry.1211188340) -->
+                <!-- 10. 喜帖索取需求 INVITATION PREFERENCE (entry.1211188340) -->
                 <div class="pt-2 border-t border-dashed border-gray-200">
                     <label for="invitation_type" class="block text-xs md:text-sm font-medium text-gray-700 tracking-wider mb-2">
                         是否需要寄送喜帖？ <span class="font-garamond font-normal text-gray-400">INVITATION REQUEST</span>
@@ -540,7 +580,7 @@
                     </select>
                 </div>
 
-                <!-- 10. 電子郵件 EMAIL (entry.1240707661) -->
+                <!-- 11. 電子郵件 EMAIL (entry.1240707661) -->
                 <div id="emailGroup" class="hidden">
                     <label for="entry_1240707661" class="block text-xs md:text-sm font-medium text-gray-700 tracking-wider mb-2">
                         電子郵件 <span class="font-garamond font-normal text-gray-400">EMAIL</span> <span class="text-red-400">*</span>
@@ -554,7 +594,7 @@
 
                 <!-- 紙本喜帖地址區塊 -->
                 <div id="paperAddressGroup" class="hidden space-y-6">
-                    <!-- 11. 郵遞區號 POSTAL CODE (entry.2067402011) -->
+                    <!-- 12. 郵遞區號 POSTAL CODE (entry.2067402011) -->
                     <div>
                         <label for="entry_2067402011" class="block text-xs md:text-sm font-medium text-gray-700 tracking-wider mb-2">
                             郵遞區號 <span class="font-garamond font-normal text-gray-400">POSTAL CODE</span>
@@ -566,7 +606,7 @@
                                class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-morandi-sage/40 focus:border-morandi-sage text-sm transition-all">
                     </div>
 
-                    <!-- 12. 喜帖寄送地址 ADDRESS (entry.488205070) -->
+                    <!-- 13. 喜帖寄送地址 ADDRESS (entry.488205070) -->
                     <div>
                         <label for="entry_488205070" class="block text-xs md:text-sm font-medium text-gray-700 tracking-wider mb-2">
                             喜帖寄送地址 <span class="font-garamond font-normal text-gray-400">MAILING ADDRESS</span> <span class="text-red-400">*</span>
@@ -579,7 +619,7 @@
                     </div>
                 </div>
 
-                <!-- 13. 祝福的話 BLESSINGS (entry.604577379) -->
+                <!-- 14. 祝福的話 BLESSINGS (entry.604577379) -->
                 <div>
                     <label for="entry_604577379" class="block text-xs md:text-sm font-medium text-gray-700 tracking-wider mb-2">
                         留給我們的祝福 <span class="font-garamond font-normal text-gray-400">BLESSINGS</span>
@@ -623,7 +663,7 @@
             </div>
             <h3 class="text-xl font-semibold text-gray-800 mb-2">回函已成功送出！</h3>
             <p class="text-sm text-gray-500 font-light leading-relaxed mb-6">
-                感謝您的回覆，我們期待在婚禮當天與您相見！😉
+                您的填單即是一份祝福，感謝您的回覆，若您能前來，我們期待在婚禮當天與您相見！😉
             </p>
             <button onclick="closeModal()" class="w-full py-3 bg-morandi-sage text-white rounded-xl text-sm tracking-wider font-medium hover:bg-opacity-90 transition-all">
                 關閉視窗
@@ -681,6 +721,32 @@
             }
         }
 
+        // Dynamic Shuttle Bus Count Validation (entry.499630872 <= entry.855032257)
+        function validateShuttleCount() {
+            const luncheonEl = document.getElementById('entry_855032257');
+            const shuttleEl = document.getElementById('entry_499630872');
+            const msgEl = document.getElementById('shuttleValidationMsg');
+
+            if (!luncheonEl || !shuttleEl || !msgEl) return true;
+
+            const luncheonCount = parseInt(luncheonEl.value, 10) || 0;
+            const shuttleCount = parseInt(shuttleEl.value, 10) || 0;
+
+            if (shuttleCount > luncheonCount) {
+                msgEl.className = "mt-2 text-xs font-medium px-3 py-1.5 rounded-lg bg-amber-50 text-amber-700 border border-amber-200/80 flex items-center";
+                msgEl.innerHTML = `<i class="fa-solid fa-triangle-exclamation mr-1.5"></i> 接駁車人數 (${shuttleCount} 人) 不得超過參加午宴人數 (${luncheonCount} 人)`;
+                return false;
+            } else if (shuttleCount > 0) {
+                msgEl.className = "mt-2 text-xs font-medium px-3 py-1.5 rounded-lg bg-emerald-50 text-morandi-sage border border-emerald-200/60 flex items-center";
+                msgEl.innerHTML = `<i class="fa-solid fa-circle-check mr-1.5"></i> 已登記 ${shuttleCount} 位搭乘接駁車（符合午宴人數範圍）`;
+                return true;
+            } else {
+                msgEl.className = "mt-2 text-xs font-medium px-2 py-1 transition-all text-gray-500";
+                msgEl.innerHTML = `未登記搭乘接駁車`;
+                return true;
+            }
+        }
+
         // Handle attendance dropdown change
         function handleAttendanceChange() {
             const attendanceEl = document.getElementById('entry_1486555222');
@@ -690,6 +756,7 @@
             if (attendance === '非常願意，我一定會到！') {
                 if (attendanceDetailsSection) attendanceDetailsSection.classList.remove('hidden');
                 validateDietaryCount();
+                validateShuttleCount();
             } else {
                 if (attendanceDetailsSection) attendanceDetailsSection.classList.add('hidden');
             }
@@ -735,15 +802,19 @@
             const attendance = attendanceEl ? attendanceEl.value : '';
 
             if (attendance === '非常願意，我一定會到！') {
-                // 驗證飲食人數與午宴人數是否相符
-                const isValid = validateDietaryCount();
-                if (!isValid) {
+                // 驗證飲食人數與接駁車人數
+                const isDietValid = validateDietaryCount();
+                const isShuttleValid = validateShuttleCount();
+
+                if (!isDietValid || !isShuttleValid) {
                     if (event) event.preventDefault();
                     
-                    // 平滑滾動至飲食需求區塊並提示
-                    const dietaryMsg = document.getElementById('dietaryValidationMsg');
-                    if (dietaryMsg) {
-                        dietaryMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    if (!isDietValid) {
+                        const dietaryMsg = document.getElementById('dietaryValidationMsg');
+                        if (dietaryMsg) dietaryMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else if (!isShuttleValid) {
+                        const shuttleMsg = document.getElementById('shuttleValidationMsg');
+                        if (shuttleMsg) shuttleMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
                     return false;
                 }
